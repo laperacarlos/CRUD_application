@@ -30,7 +30,10 @@ public class TaskController {
         );
     }
 
-    @DeleteMapping(value = "deleteTask") public void deleteTask(Long taskId) {
+    @DeleteMapping(value = "deleteTask") public void deleteTask (@RequestParam Long taskId) throws TaskNotFoundException {
+        if (dbService.getTaskById(taskId).isPresent()) {
+            dbService.deleteTaskById(taskId);
+        } else throw new TaskNotFoundException();
     }
 
     @PutMapping(value = "updateTask")
