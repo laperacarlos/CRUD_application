@@ -17,7 +17,6 @@ import java.net.URI;
 import java.util.*;
 import java.util.stream.Collectors;
 
-@CrossOrigin("*")
 @Component
 @RequiredArgsConstructor
 public class TrelloClient {
