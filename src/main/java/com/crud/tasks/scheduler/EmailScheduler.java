@@ -26,7 +26,7 @@ public class EmailScheduler {
             numberOfTasks = size + " tasks.";
         }
 
-        simpleEmailService.send(
+        simpleEmailService.sendDaily(
                 new Mail(
                         adminConfig.getAdminMail(),
                         null,
