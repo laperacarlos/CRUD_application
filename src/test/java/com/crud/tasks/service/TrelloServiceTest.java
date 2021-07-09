@@ -16,7 +16,6 @@ import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 public class TrelloServiceTest {
-    private static final String SUBJECT = "Tasks: New Trello card";
 
     @InjectMocks
     private TrelloService trelloService;
