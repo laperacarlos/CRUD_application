@@ -32,12 +32,12 @@ public class EmailSchedulerTest {
         //given
         when(taskRepository.count()).thenReturn(1L);
         when(adminConfig.getAdminMail()).thenReturn("test@test.com");
-        doNothing().when(simpleEmailService).send(any(Mail.class));
+        doNothing().when(simpleEmailService).sendDaily(any(Mail.class));
 
         //when
         emailScheduler.sendInformationEmail();
 
         //then
-        verify(simpleEmailService, times(1)).send(any(Mail.class));
+        verify(simpleEmailService, times(1)).sendDaily(any(Mail.class));
     }
 }
